@@ -6,17 +6,45 @@ function noSearchDefaultPageRender() {
   app.innerHTML = `
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
       <div class="content-container">
-        <h1>Bang</h1>
+        <h1 class="bang-title">💣 Bang!</h1>
+        <p>
+          Add the following URL as a custom search engine to your browser in order to enable
+          <a href="https://duckduckgo.com/bang.html" target="_blank">
+            all of DuckDuckGo's bangs
+          </a>
+          right from your browser's search bar!
+        </p>
         <div class="url-container"> 
           <input 
             type="text" 
             class="url-input"
-            value="bang.gbrown.org?q=%s"
+            value="https://bang.gbrown.org?q=%s"
             readonly 
           />
           <button class="copy-button">
             <img src="/clipboard.svg" alt="Copy" />
           </button>
+        </div>
+        <h3 class="settings-title">Search Settings Links</h3>
+        <div class="settings-links-container">
+          <h3>
+            <a href="about:preferences#search" target="_blank">
+              <img
+                src="/firefox.svg"
+                alt="Firefox"
+                width="30"
+              />
+            </a>
+          </h3>
+          <h3>
+            <a href="chrome://settings/searchEngines" target="_blank">
+              <img
+                src="/chrome.svg"
+                alt="Chrome"
+                width="30"
+              />
+            </a>
+          </h3>
         </div>
       </div>
     </div>
@@ -27,7 +55,7 @@ function noSearchDefaultPageRender() {
   const urlInput = app.querySelector<HTMLInputElement>(".url-input")!;
 
   copyButton.addEventListener("click", async () => {
-    await navigator.clipboard.writeText("https://" + urlInput.value);
+    await navigator.clipboard.writeText(urlInput.value);
     copyIcon.src = "/clipboard-check.svg";
 
     setTimeout(() => {
