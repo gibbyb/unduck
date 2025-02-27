@@ -6,13 +6,12 @@ function noSearchDefaultPageRender() {
   app.innerHTML = `
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
       <div class="content-container">
-        <h1>Und*ck</h1>
-        <p>DuckDuckGo's bang redirects are too slow. Add the following URL as a custom search engine to your browser. Enables <a href="https://duckduckgo.com/bang.html" target="_blank">all of DuckDuckGo's bangs.</a></p>
+        <h1>Bang</h1>
         <div class="url-container"> 
           <input 
             type="text" 
             class="url-input"
-            value="https://unduck.link?q=%s"
+            value="bang.gbrown.org?q=%s"
             readonly 
           />
           <button class="copy-button">
@@ -20,13 +19,6 @@ function noSearchDefaultPageRender() {
           </button>
         </div>
       </div>
-      <footer class="footer">
-        <a href="https://t3.chat" target="_blank">t3.chat</a>
-        •
-        <a href="https://x.com/theo" target="_blank">theo</a>
-        •
-        <a href="https://github.com/t3dotgg/unduck" target="_blank">github</a>
-      </footer>
     </div>
   `;
 
@@ -35,7 +27,7 @@ function noSearchDefaultPageRender() {
   const urlInput = app.querySelector<HTMLInputElement>(".url-input")!;
 
   copyButton.addEventListener("click", async () => {
-    await navigator.clipboard.writeText(urlInput.value);
+    await navigator.clipboard.writeText("https://" + urlInput.value);
     copyIcon.src = "/clipboard-check.svg";
 
     setTimeout(() => {
@@ -44,7 +36,7 @@ function noSearchDefaultPageRender() {
   });
 }
 
-const LS_DEFAULT_BANG = localStorage.getItem("default-bang") ?? "g";
+const LS_DEFAULT_BANG = localStorage.getItem("default-bang") ?? "sg";
 const defaultBang = bangs.find((b) => b.t === LS_DEFAULT_BANG);
 
 function getBangredirectUrl() {

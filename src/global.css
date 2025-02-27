@@ -99,6 +99,7 @@ textarea {
   border-radius: 4px;
   width: 100%;
   background: #f5f5f5;
+  text-align: center;
 }
 
 .copy-button {

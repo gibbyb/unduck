@@ -2,6 +2,15 @@
 
 export const bangs = [
   {
+    c: "Online Services",
+    d: "search.gibbyb.com",
+    r: 0,
+    s: "GibbyB",
+    sc: "Search",
+    t: "sg",
+    u: "https://search.gibbyb.com/?q={{{s}}}",
+  },
+  {
     c: "AI",
     d: "www.t3.chat",
     r: 0,
@@ -9,24 +18,6 @@ export const bangs = [
     sc: "AI",
     t: "t3",
     u: "https://www.t3.chat/new?q={{{s}}}",
-  },
-  {
-    c: "Tech",
-    d: "www.01net.com",
-    r: 4,
-    s: "01net",
-    sc: "Downloads (apps)",
-    t: "01net",
-    u: "http://www.01net.com/recherche/recherche.php?searchstring={{{s}}}&chaine=home",
-  },
-  {
-    c: "Entertainment",
-    d: "www.bmw2002faq.com",
-    r: 0,
-    s: "BMW 2002 FAQ",
-    sc: "Forum",
-    t: "02faq",
-    u: "https://www.bmw2002faq.com/search/?q={{{s}}}",
   },
   {
     c: "Entertainment",
@@ -93872,7 +93863,7 @@ export const bangs = [
     r: 46,
     s: "Sourcegraph",
     sc: "Programming",
-    t: "sg",
+    t: "srcg",
     u: "https://sourcegraph.com/search?q={{{s}}}",
   },
   {
