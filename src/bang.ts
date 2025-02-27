@@ -11,6 +11,15 @@ export const bangs = [
     u: "https://search.gibbyb.com/?q={{{s}}}",
   },
   {
+    c: "Tech",
+    d: "git.gibbyb.com",
+    r: 0,
+    s: "Gitea",
+    sc: "Cryptocurrency",
+    t: "tea",
+    u: "https://git.gibbyb.com/?repo-search-query={{{s}}}",
+  },
+  {
     c: "AI",
     d: "chat.gibbyb.com",
     r: 0,
