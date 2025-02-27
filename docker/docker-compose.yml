@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
     volumes:
       - ../:/app # mount the parent directory to /app in the container
-    command: serve -s /app -l 5000
+    command: serve -s /app/dist -l 5000
 
 networks:
   node_apps:
