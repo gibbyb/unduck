@@ -4,7 +4,7 @@ import "./global.css";
 function noSearchDefaultPageRender() {
   const app = document.querySelector<HTMLDivElement>("#app")!;
   app.innerHTML = `
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+    <main class="main-container">
       <div class="content-container">
         <h1 class="bang-title">💣 Bang!</h1>
         <p>
@@ -75,7 +75,7 @@ function noSearchDefaultPageRender() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   `;
 
   const copyButton = app.querySelector<HTMLButtonElement>(".copy-button")!;

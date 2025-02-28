@@ -93,16 +93,24 @@ textarea {
 }
 
 /* --- Container layout unchanged --- */
-.url-container {
+.main-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  margin-top: 16px;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px 0px;
 }
 .content-container {
   max-width: 36rem;
   text-align: center;
   padding: 0 8px;
+}
+.url-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
 }
 
 /* --- URL input element styling adjustments --- */
@@ -168,23 +176,13 @@ textarea {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 32px;
-}
-@media (max-width: 500px) {
-  .settings-links-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-  }
+  gap: 24px;
 }
 
 .browser-link-container {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 8px;
 }
 .browser-instruction {
   display: flex;
@@ -208,3 +206,19 @@ textarea {
   background-color: var(--input-bg-color);
   width: 100px;
 }
+
+/* --- Mobile --- */
+@media (max-width: 500px) {
+  .settings-links-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+  }
+  .main-container {
+    justify-content: flex-start;
+    padding: 40px;
+  }
+}
+
