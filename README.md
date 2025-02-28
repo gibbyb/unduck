@@ -1,4 +1,4 @@
-# Bang
+# 💣Bang
 
 *This is a fork of [unduck](https://unduck.link) by [Theo](https://github.com/t3dotgg/unduck).*
 
