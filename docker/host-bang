@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Function to check if we're in the correct directory
+check_directory() {
+    if [ -d "docker" ] && [ -f "package.json" ]; then
+        return 0 # We're in the root directory
+    fi
+    return 1
+}
+
+# Initialize root_dir
+root_dir=""
+
+# Check if argument is provided
+if [ $# -eq 1 ]; then
+    # Use provided path
+    if [ -d "$1" ]; then
+        root_dir="$1"
+        cd "$root_dir" || exit 1
+    else
+        echo "Error: Provided directory does not exist"
+        exit 1
+    fi
+else
+    # No argument provided, try to determine location
+    current_dir=$(basename "$(pwd)")
+    
+    if [ "$current_dir" = "docker" ]; then
+        cd .. || exit 1
+    elif [ "$current_dir" != "Bang" ]; then
+        echo "Error: Not in the correct directory and no valid path provided"
+        echo "Please either:"
+        echo "1. Run this script from the Bang root directory"
+        echo "2. Run this script from the docker directory"
+        echo "3. Provide the path to the Bang root directory as an argument"
+        exit 1
+    fi
+fi
+
+# Verify we're in the correct directory
+if ! check_directory; then
+    echo "Error: Not in the correct directory structure"
+    echo "Make sure you're in a directory with 'docker' folder and package.json"
+    exit 1
+fi
+
+pnpm install
+pnpm build
+cd docker || exit 1
+sudo docker compose up -d
+cd ..
