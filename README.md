@@ -38,9 +38,10 @@ Theo solved this by doing all of the work client side. Once you've went to https
 2. Fill out the .env.example file in the root directory & rename it to .env.
 3. Run `pnpm install && pnpm build` from the root of the repo.
 4. Navigate to the docker folder & fill out the .env.example file & rename it to .env.
+    - *Note: Our docker compose assumes you plan to select an external network.*
 5. Run `sudo docker compose up -d` from within the docker directory.
 
 ### How to update the website
 
-1. Run `pnpm build` from the root of the repo.
-2. Navigate to the docker folder & run `sudo docker compose down && sudo docker-compose up -d`
+1. Run the bash script `update-bang` in the docker directory with the root directory of the project as the argument.
+    - *Note: You can also simply run it from the root or docker directory without an argument.*
