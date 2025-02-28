@@ -41,7 +41,7 @@ export const bangs = [
     s: "Plex",
     sc: "Movies",
     t: "plex",
-    u: `${PLEX_URL}/web/index.html#!/search?pivot=top&query=query={{{s}}}`,
+    u: `${PLEX_URL}/web/index.html#!/search?pivot=top&query={{{s}}}`,
   },
   {
     c: "Entertainment",
