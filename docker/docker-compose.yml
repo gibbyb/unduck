@@ -1,3 +1,8 @@
+networks:
+  default:
+    name: ${NETWORK}
+    external: true
+
 services:
   bang-web-server:
     env_file:
@@ -8,7 +13,7 @@ services:
     container_name: bang
     domainname: ${DOMAIN}
     networks:
-      - ${NETWORK}
+      - default
     hostname: bang
     ports:
       - ${PORT}:${PORT}
@@ -17,7 +22,3 @@ services:
     volumes:
       - ../:/app
     command: serve -s /app/dist -l 5000
-
-networks:
-  ${NETWORK}:
-    external: true
