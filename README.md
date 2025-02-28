@@ -4,11 +4,13 @@
 
 ## Why fork?
 
-This fork allows anyone to easily self host this service & allows them to easily add bangs for their own self-hosted websites, & comes pre-configured to work with
+This fork allows anyone to easily self host this service & add bangs for their own self-hosted websites. Bang comes pre-configured to work with
 
-- Searxng
-- Gitea
-- OpenWebUI
+- Searxng *!s*
+- Gitea *!tea*
+- OpenWebUI *!ai*
+
+*Note: We have replaced some of the default bangs from duckduckgo with our own bangs in order to have more simple bangs for the self-hosted websites.*
 
 You can also easily add your own bangs by adding a new entry in the bangs.ts file.
 
