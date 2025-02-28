@@ -3,7 +3,6 @@
 const SEARXNG_URL = import.meta.env.VITE_SEARXNG_URL as string;
 const GITEA_URL = import.meta.env.VITE_GITEA_URL as string;
 const OPENWEBUI_URL = import.meta.env.VITE_OPENWEBUI_URL as string;
-const NEXTCLOUD_APPS_URL = import.meta.env.VITE_NEXTCLOUD_APPS_URL as string ?? "https://apps.nextcloud.com";
 const PLEX_URL = import.meta.env.VITE_PLEX_URL as string;
 const OVERSEERR_URL = import.meta.env.VITE_OVERSEERR_URL as string;
 const SONARR_URL = import.meta.env.VITE_SONARR_URL as string;
@@ -73583,12 +73582,12 @@ export const bangs = [
   },
   {
     c: "Tech",
-    d: NEXTCLOUD_APPS_URL,
+    d: "apps.nextcloud.com",
     r: 0,
     s: "Nextcloud App Store",
     sc: "Sysadmin",
     t: "cloudapp",
-    u: `${NEXTCLOUD_APPS_URL}/?q={{{s}}}`,
+    u: "https://apps.nextcloud.com/search/?q={{{s}}}",
   },
   {
     c: "Entertainment",

@@ -9,12 +9,11 @@ This fork allows anyone to easily self host this service & add bangs for their o
 - Searxng *!s*
 - Gitea *!tea*
 - OpenWebUI *!ai*
-- Nextcloud App Store *!cloudapp*
 - Plex *!plex*
-- ~Overseerr *!ov*~ *Overseerr doesn't seem to work correctly*
 - Sonarr *!tv*
 - Radarr *!mv*
 - Lidarr *!mp3*
+- ~Overseerr *!ov*~ *Overseerr doesn't seem to work correctly*
 
 *Note: We have replaced some of the default bangs from duckduckgo with our own bangs in order to have more simple bangs for the self-hosted websites.*
 
