@@ -3,6 +3,13 @@
 const SEARXNG_URL = import.meta.env.VITE_SEARXNG_URL as string;
 const GITEA_URL = import.meta.env.VITE_GITEA_URL as string;
 const OPENWEBUI_URL = import.meta.env.VITE_OPENWEBUI_URL as string;
+const NEXTCLOUD_APPS_URL = import.meta.env.VITE_NEXTCLOUD_URL as string ?? "https://apps.nextcloud.com";
+const PLEX_URL = import.meta.env.VITE_PLEX_URL as string;
+const OVERSEERR_URL = import.meta.env.VITE_OVERSEERR_URL as string;
+const SONARR_URL = import.meta.env.VITE_SONARR_URL as string;
+const RADARR_URL = import.meta.env.VITE_RADARR_URL as string;
+const LIDARR_URL = import.meta.env.VITE_LIDARR_URL as string;
+
 const LLAMA_MODEL = import.meta.env.VITE_LLAMA_MODEL.replace(":", "%3A") as string;
 const DEEPSEEK_MODEL = import.meta.env.VITE_DEEPSEEK_MODEL.replace(":", "%3A") as string;
 const OPENAI_MODEL = import.meta.env.VITE_OPENAI_MODEL as string;
@@ -26,6 +33,51 @@ export const bangs = [
     sc: "Cryptocurrency",
     t: "tea",
     u: `${GITEA_URL}/?repo-search-query={{{s}}}`,
+  },
+  {
+    c: "Entertainment",
+    d: PLEX_URL,
+    r: 0,
+    s: "Plex",
+    sc: "Movies",
+    t: "plex",
+    u: `${PLEX_URL}/web/index.html#!/search?pivot=top&query=query={{{s}}}`,
+  },
+  {
+    c: "Entertainment",
+    d: OVERSEERR_URL,
+    r: 0,
+    s: "Overseerr",
+    sc: "Movies",
+    t: "ov",
+    u: `${OVERSEERR_URL}/search?query={{{s}}}`,
+  },
+  {
+    c: "Entertainment",
+    d: LIDARR_URL,
+    r: 0,
+    s: "Lidarr",
+    sc: "Music",
+    t: "mp3",
+    u: `${LIDARR_URL}/add/new?term={{{s}}}`,
+  },
+  {
+    c: "Entertainment",
+    d: SONARR_URL,
+    r: 0,
+    s: "Sonarr",
+    sc: "TV",
+    t: "tv",
+    u: `${SONARR_URL}/add/new?term={{{s}}}`,
+  },
+  {
+    c: "Entertainment",
+    d: RADARR_URL,
+    r: 0,
+    s: "Radarr",
+    sc: "Movies",
+    t: "mv",
+    u: `${RADARR_URL}/add/new?term={{{s}}}`,
   },
   {
     c: "AI",
@@ -71422,7 +71474,7 @@ export const bangs = [
     r: 10,
     s: "Myvideo",
     sc: "Video",
-    t: "mv",
+    t: "myvideo",
     u: "http://www.myvideo.de/Videos_A-Z?searchWord={{{s}}}",
   },
   {
@@ -73531,12 +73583,12 @@ export const bangs = [
   },
   {
     c: "Tech",
-    d: "apps.nextcloud.com",
+    d: NEXTCLOUD_APPS_URL,
     r: 0,
     s: "Nextcloud App Store",
     sc: "Sysadmin",
-    t: "nextcloudapp",
-    u: "https://apps.nextcloud.com/?search={{{s}}}",
+    t: "cloudapp",
+    u: `${NEXTCLOUD_APPS_URL}/?q={{{s}}}`,
   },
   {
     c: "Entertainment",
@@ -78861,7 +78913,7 @@ export const bangs = [
     r: 0,
     s: "StackOverflow",
     sc: "Programming",
-    t: "ov",
+    t: "ovfl",
     u: "http://stackoverflow.com/search?q={{{s}}}",
   },
   {
@@ -106816,15 +106868,6 @@ export const bangs = [
   },
   {
     c: "Entertainment",
-    d: "www.tv.com",
-    r: 0,
-    s: "TV.com",
-    sc: "TV",
-    t: "tvcom",
-    u: "http://www.tv.com/search?q={{{s}}}",
-  },
-  {
-    c: "Entertainment",
     d: "www.thetvdb.com",
     r: 0,
     s: "TheTVDB",
@@ -106982,8 +107025,8 @@ export const bangs = [
     r: 31,
     s: "tv.com",
     sc: "TV",
-    t: "tv",
-    u: "http://www.tv.com/search?q= {{{s}}}",
+    t: "tvcom",
+    u: "http://www.tv.com/search?q={{{s}}}",
   },
   {
     c: "Shopping",
