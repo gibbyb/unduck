@@ -30,9 +30,9 @@ Theo solved this by doing all of the work client side. Once you've went to https
 2. Fill out the .env.example file & rename it to .env
 3. Run `pnpm install` from the root of the repo
 4. Run `pnpm build` from the root of the repo
-5. Navigate to the docker folder & run `docker-compose up -d`
+5. Navigate to the docker folder & run `sudo docker-compose up -d`
 
 ### How to update the website
 
 1. Run `pnpm build` from the root of the repo
-2. Navigate to the docker folder & run `docker-compose up -d`
+2. Navigate to the docker folder & run `sudo docker compose down && sudo docker-compose up -d`
