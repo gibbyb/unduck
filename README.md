@@ -34,13 +34,13 @@ Theo solved this by doing all of the work client side. Once you've went to https
 
 ### How to self host
 
-1. Clone the repo
-2. Fill out the .env.example file & rename it to .env
-3. Run `pnpm install` from the root of the repo
-4. Run `pnpm build` from the root of the repo
-5. Navigate to the docker folder & run `sudo docker-compose up -d`
+1. Clone the repo.
+2. Fill out the .env.example file in the root directory & rename it to .env.
+3. Run `pnpm install && pnpm build` from the root of the repo.
+4. Navigate to the docker folder & fill out the .env.example file & rename it to .env.
+5. Run `sudo docker compose up -d` from within the docker directory.
 
 ### How to update the website
 
-1. Run `pnpm build` from the root of the repo
+1. Run `pnpm build` from the root of the repo.
 2. Navigate to the docker folder & run `sudo docker compose down && sudo docker-compose up -d`

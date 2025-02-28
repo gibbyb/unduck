@@ -24,6 +24,8 @@ dist-ssr
 *.sw?
 
 # ENV
+docker/.env
+!docker/.env.example
 .env
 .env*
 !.env.example

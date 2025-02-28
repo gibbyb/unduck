@@ -1,23 +1,23 @@
-version: '3.8'
-
 services:
   bang-web-server:
+    env_file:
+      - .env
     build:
-      context: ../ # point to the parent directory where package.json and source code reside
-      dockerfile: docker/Dockerfile # specific path to the Dockerfile
+      context: ../
+      dockerfile: docker/Dockerfile
     container_name: bang
-    domainname: bang.gbrown.org
-    hostname: bang
+    domainname: ${DOMAIN}
     networks:
-      - node_apps
+      - ${NETWORK}
+    hostname: bang
     ports:
-      - "5000:5000"
+      - ${PORT}:${PORT}
     tty: true
     restart: unless-stopped
     volumes:
-      - ../:/app # mount the parent directory to /app in the container
+      - ../:/app
     command: serve -s /app/dist -l 5000
 
 networks:
-  node_apps:
+  ${NETWORK}:
     external: true
