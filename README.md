@@ -11,7 +11,7 @@ This fork allows anyone to easily self host this service & add bangs for their o
 - OpenWebUI *!ai*
 - Nextcloud App Store *!cloudapp*
 - Plex *!plex*
-- Overseerr *!ov*
+- ~Overseerr *!ov*~ *Overseerr doesn't seem to work correctly*
 - Sonarr *!tv*
 - Radarr *!mv*
 - Lidarr *!mp3*
