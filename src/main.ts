@@ -18,7 +18,7 @@ function noSearchDefaultPageRender() {
           <input 
             type="text" 
             class="url-input"
-            value="https://bang.gbrown.org?q=%s"
+            value="${import.meta.env.VITE_BANG_URL}?q=%s"
             readonly 
           />
           <button class="copy-button">
@@ -41,7 +41,7 @@ function noSearchDefaultPageRender() {
           </tr>
           <tr>
             <td><b>Engine URL:</b></td>
-            <td>https://bang.gbrown.org?q=%s</td>
+            <td>${import.meta.env.VITE_BANG_URL}?q=%s</td>
           </tr>
           <tr>
             <td><b>Alias:</b></td>
@@ -113,7 +113,8 @@ function noSearchDefaultPageRender() {
   });
 }
 
-const LS_DEFAULT_BANG = localStorage.getItem("default-bang") ?? "sg";
+const envDefaultBang = import.meta.env.VITE_DEFAULT_BANG ?? "g";
+const LS_DEFAULT_BANG = localStorage.getItem("default-bang") ?? envDefaultBang;
 const defaultBang = bangs.find((b) => b.t === LS_DEFAULT_BANG);
 
 function getBangredirectUrl() {
